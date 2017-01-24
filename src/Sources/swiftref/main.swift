@@ -87,8 +87,10 @@ if target.contains("://") {
     if CommandLine.arguments.count > 2 && !CommandLine.arguments[2].isEmpty {
         fileName = CommandLine.arguments[2]
     } else {
-        if let hostPart = url.host?.components(separatedBy: ".")[0] {
-            fileName = hostPart
+        if let segments = url.host?.components(separatedBy: ".") {
+            fileName = segments.count >= 2
+                ? segments[segments.count - 2]
+                : segments[0]
         }
     }
 
