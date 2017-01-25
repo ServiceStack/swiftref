@@ -3,6 +3,7 @@ import Foundation
 func printUsage() -> Int32 {
     print("\nUsage:")
     print("\nAdd a new ServiceStack Reference:")
+    print("  swiftref {BaseUrl}")
     print("  swiftref {BaseUrl} {FileName}")
     print("\nUpdate an existing ServiceStack Reference:")
     print("  swiftref {FileName.dtos.swift}")
